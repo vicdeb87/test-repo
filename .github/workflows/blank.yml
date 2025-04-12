@@ -49,6 +49,26 @@ jobs:
       - name: kernel info 
 
         run: uname -r
+  
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: check memory
+
+        run: free -m
+
+      - name: check hard drive
+
+        run: lsblk
+
+      - name: os version 
+
+        run: cat /etc/os-release
+     
+    
 
 
 
